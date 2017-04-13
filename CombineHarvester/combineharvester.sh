@@ -44,7 +44,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Pick Domain
 domain=$1
-echo -e "Harvesting for" ${red} "$domain"
+echo -e ${green} "[+]" ${white} "Harvesting for" ${red} "$domain"
 
 # Build Temp Area
 mkdir $2
