@@ -27,7 +27,7 @@ cat << "EOF"
   \_____\___/|_| |_| |_|_.__/|_|_| |_|\___|_|  |_|\__,_|_|    \_/ \___||___/\__\___|_|   
 EOF
 
-cd /root/Desktop/lib/scripts/CombineHarvester
+cd /root/Desktop/lib/CombineHarvester
 ./combineharvester.sh "$1" "$2"
 
 cd ..
