@@ -46,7 +46,7 @@ echo -e ${blue} "[-]" ${white} "A Complete list of email addresses that were fou
 ./HaveTheyBeenPwned.py -i $2/human-emails -o $2/OwnedEmailAddress.txt
 cd ..
 cd /root/Desktop/lib/Domain-Mail-Check
-echo  -e ${blue} "[+]" ${white} "Checking for SPF and DMARC" ${yellow}
+echo  -e ${green} "[+]" ${white} "Checking for SPF and DMARC" ${yellow}
 cat << "EOF"
   _____                   _____  __  __  _____ 
  |  __ \                 |  __ \|  \/  |/ ____|
@@ -58,5 +58,5 @@ EOF
 echo -e ${white} 
 python Run-DMC -d $1
 
-echo  -e ${green} "[+]" ${white} "Check $2/human-emails.txt for a Complete list of Email Addresses found"
+echo  -e ${blue} "[-]" ${white} "An XML output is also in the Domain-Mail-Check Folder"
 echo  -e ${green} "[+]" ${white} "Complete"
