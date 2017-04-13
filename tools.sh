@@ -25,6 +25,7 @@ git clone https://github.com/sensepost/mana
 git clone https://github.com/Raikia/FiercePhish
 git clone https://github.com/darkoperator/dnsrecon.git
 git clone https://github.com/nccgroup/vlan-hopping---frogger.git
+git clone https://github.com/darkoperator/dnsrecon.git
 
 # Update Packages
 git clone git://git.kali.org/packages/exploitdb.git
