@@ -43,7 +43,7 @@ cat << "EOF"
  |_|  |_|_____|____/|_|       \_____|_| |_|\___|\___|_|\_\
 EOF
 echo -e ${blue} "[-]" ${white} "A Complete list of email addresses that were found is here" $2
-./HaveTheyBeenPwned.py -i $2/human-emails -o $2/OwnedEmailAddress.txt
+./HaveTheyBeenPwned.py -i $2/Email_HIBP -o $2/OwnedEmailAddress.txt
 cd ..
 cd /root/Desktop/lib/Domain-Mail-Check
 echo  -e ${green} "[+]" ${white} "Checking for SPF and DMARC" ${yellow}
