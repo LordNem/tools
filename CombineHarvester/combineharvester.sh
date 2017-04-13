@@ -197,4 +197,5 @@ cat $tmpdir/shared-emails | sort | uniq > nothuman.$domain
 
 
 # *molotov*
+cat $tmpdir/humans.csv |cut -d "," -f 3 >> $tmpdir/Email_HIBP
 echo -e ${green} "[+]" ${white} "Output files saved to" $tmpdir
