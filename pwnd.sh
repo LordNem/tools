@@ -27,11 +27,11 @@ cat << "EOF"
   \_____\___/|_| |_| |_|_.__/|_|_| |_|\___|_|  |_|\__,_|_|    \_/ \___||___/\__\___|_|   
 EOF
 
-cd /root/Desktop/lib/CombineHarvester
+cd /root/lib/CombineHarvester
 ./combineharvester.sh "$1" "$2"
 
 cd ..
-cd /root/Desktop/lib/HaveTheyBeenPwned
+cd /root/lib/HaveTheyBeenPwned
 
 echo -e ${green} "[+]" ${white} "Extracting Email Addresses for HIBP" ${yellow}
 cat $2/humans.csv  | cut -d , -f 1,3 |cut -d , -f 2| grep -v no.| grep -v found | sort -u >> $2/Email_HIBP
@@ -46,7 +46,7 @@ EOF
 echo -e ${blue} "[-]" ${white} "A Complete list of email addresses that were found is here" $2
 ./HaveTheyBeenPwned.py -i $2/Email_HIBP -o $2/OwnedEmailAddress.txt
 cd ..
-cd /root/Desktop/lib/Domain-Mail-Check
+cd /root/lib/Domain-Mail-Check
 echo  -e ${green} "[+]" ${white} "Checking for SPF and DMARC" ${yellow}
 cat << "EOF"
   _____                   _____  __  __  _____ 
