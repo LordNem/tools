@@ -33,7 +33,8 @@ cd /root/Desktop/lib/CombineHarvester
 cd ..
 cd /root/Desktop/lib/HaveTheyBeenPwned
 
-echo -e ${green} "[+]" ${white} "Checking for Addresses against HIBP" ${yellow}
+echo -e ${green} "[+]" ${white} "Extracting Email Addresses for HIBP" ${yellow}
+cat $2/humans.csv  | cut -d , -f 1,3 |cut -d , -f 2| grep -v no.| grep -v found | sort -u >> $2/Email_HIBP
 cat << "EOF"
   _    _ _____ ____  _____     _____ _               _    
  | |  | |_   _|  _ \|  __ \   / ____| |             | |   
