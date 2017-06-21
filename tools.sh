@@ -29,4 +29,4 @@ git clone https://github.com/darkoperator/dnsrecon.git
 git clone https://github.com/Dionach/CMSmap.git
 
 # Update Packages
-git clone git://git.kali.org/packages/exploitdb.git
+#git clone git://git.kali.org/packages/exploitdb.git
