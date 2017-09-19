@@ -6,7 +6,7 @@ sudo apt-get -y upgrade
 
 # Configure ToolSuite
 cd ~/
-cd Desktop
+cd /opt
 mkdir lib
 cd lib
 
