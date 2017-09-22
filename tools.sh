@@ -27,6 +27,7 @@ git clone https://github.com/darkoperator/dnsrecon.git
 git clone https://github.com/nccgroup/vlan-hopping---frogger.git
 git clone https://github.com/darkoperator/dnsrecon.git
 git clone https://github.com/Dionach/CMSmap.git
+git clone https://github.com/evilsocket/bettercap.git
 
 # Update Packages
 #git clone git://git.kali.org/packages/exploitdb.git
