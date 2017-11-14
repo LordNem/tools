@@ -34,8 +34,6 @@ echo -e ${green} "[+]" ${white} "Downloading" ${red} "Frogger" ${white}
 	git clone https://github.com/nccgroup/vlan-hopping---frogger.git &> /dev/null
 echo -e ${green} "[+]" ${white} "Downloading" ${red} "CMSMap" ${white}
 	git clone https://github.com/Dionach/CMSmap.git &> /dev/null
-echo -e ${green} "[+]" ${white} "Downloading" ${red} "Pwned" ${white}
-	git clone https://github.com/LordNem/tools.git &> /dev/null
 echo -e ${green} "[+]" ${white} "Downloading" ${red} "bettercap" ${white}
 	git clone https://github.com/evilsocket/bettercap.git &> /dev/null
 echo -e ${green} "[+]" ${white} "Installing" ${red} "sshfs" ${white}
@@ -47,7 +45,7 @@ echo -e ${green} "[+]" ${white} "Installing" ${red} "sshfs" ${white}
 #Set Target Location
 printf "\033c"
 set_target (){
-echo -e ${green} "[+]" ${yellow} "Enter the where you would like the tools Placed" ${white}
+echo -e ${green} "[+]" ${yellow} "Enter the where you would like the tools Placed" ${red}
 read -e  tools
 mkdir $tools
 cd $tools
@@ -66,11 +64,12 @@ cat << "EOF"
   \_/\___/ \___/|_|___/
 EOF
 
-echo -e ${green} "[+]" ${white} "Do you want to Update && Upgrade <Y/n> " 
-read
+echo -e ${green} "[+]" ${white} "Do you want to Update && Upgrade <Y/n> " ${red}
+read prompt
 if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]]
 then
- sudo apt-get update && apt-get -y upgrade
+echo -e ${green} "[+]" ${white} "Performing updates Silently Please wait..."
+ sudo apt-get update &> /dev/null && apt-get -y upgrade &> /dev/null
 set_target
 else
 set_target
