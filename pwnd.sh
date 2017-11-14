@@ -29,27 +29,22 @@ EOF
 
 cd /root/tools/CombineHarvester
 ./combineharvester.sh "$1" "$2"
-
 cd ..
-cd /root/tools/HaveTheyBeenPwned
 
-echo -e ${green} "[+]" ${white} "Extracting Email Addresses for HIBP" ${yellow}
-cat $2/humans.csv  | cut -d , -f 1,3 |cut -d , -f 2|sort -u |grep -v "found@" > $2/Emails.txt
-cat << "EOF"
-  _    _ _____ ____  _____     _____ _               _    
- | |  | |_   _|  _ \|  __ \   / ____| |             | |   
- | |__| | | | | |_) | |__) | | |    | |__   ___  ___| | __
- |  __  | | | |  _ <|  ___/  | |    | '_ \ / _ \/ __| |/ /
- | |  | |_| |_| |_) | |      | |____| | | |  __/ (__|   < 
- |_|  |_|_____|____/|_|       \_____|_| |_|\___|\___|_|\_\
+_cat << "EOF"
+
+______ _   _  ___________                     
+|  _  \ \ | |/  ___| ___ \                    
+| | | |  \| |\ `--.| |_/ /___  ___ ___  _ __  
+| | | | . ` | `--. \    // _ \/ __/ _ \| '_ \ 
+| |/ /| |\  |/\__/ / |\ \  __/ (_| (_) | | | |
+|___/ \_| \_/\____/\_| \_\___|\___\___/|_| |_|
+             
 EOF
-echo -e ${blue} "[-]" ${white} "A Complete list of email addresses that were found is here" $2
-./HaveTheyBeenPwned.py -i $2/Emails.txt -oR $2/OwnedEmailAddress.txt
-cd ..
 
 cd /root/tools/dnsrecon
-echo -e ${blue} "[-]" ${white} "A output will be found here /root/tools/dnsrecon" 
-./dnsrecon.py -n 8.8.8.8 --domain $1 -t axfr -x $1
+echo -e ${blue} "[-]" ${white} "A output will be found here " $2
+./dnsrecon.py -n 8.8.8.8 --domain $1 -t axfr -x $2/$1
 
 
 cd /root/tools/Domain-Mail-Check
@@ -66,4 +61,20 @@ echo -e ${white}
 python Run-DMC -d $1
 
 echo  -e ${blue} "[-]" ${white} "An XML output is also in the Domain-Mail-Check Folder"
+
+cd /root/tools/HaveTheyBeenPwned
+
+echo -e ${green} "[+]" ${white} "Extracting Email Addresses for HIBP" ${yellow}
+cat $2/humans.csv  | cut -d , -f 1,3 |cut -d , -f 2|sort -u |grep -v "found@" > $2/Emails.txt
+cat << "EOF"
+  _    _ _____ ____  _____     _____ _               _    
+ | |  | |_   _|  _ \|  __ \   / ____| |             | |   
+ | |__| | | | | |_) | |__) | | |    | |__   ___  ___| | __
+ |  __  | | | |  _ <|  ___/  | |    | '_ \ / _ \/ __| |/ /
+ | |  | |_| |_| |_) | |      | |____| | | |  __/ (__|   < 
+ |_|  |_|_____|____/|_|       \_____|_| |_|\___|\___|_|\_\
+EOF
+echo -e ${blue} "[-]" ${white} "A Complete list of email addresses that were found is here" $2
+./HaveTheyBeenPwned.py -i $2/Emails.txt -oR $2/OwnedEmailAddress.txt
+cd ..
 echo  -e ${green} "[+]" ${white} "Complete"
