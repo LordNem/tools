@@ -34,6 +34,8 @@ echo -e ${green} "[+]" ${white} "Downloading" ${red} "Frogger" ${white}
 	git clone https://github.com/nccgroup/vlan-hopping---frogger.git &> /dev/null
 echo -e ${green} "[+]" ${white} "Downloading" ${red} "CMSMap" ${white}
 	git clone https://github.com/Dionach/CMSmap.git &> /dev/null
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "Pwned" ${white}
+	git clone https://github.com/LordNem/tools.git &> /dev/null
 echo -e ${green} "[+]" ${white} "Downloading" ${red} "bettercap" ${white}
 	git clone https://github.com/evilsocket/bettercap.git &> /dev/null
 echo -e ${green} "[+]" ${white} "Installing" ${red} "sshfs" ${white}
