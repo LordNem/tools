@@ -34,7 +34,7 @@ cd ..
 cd /root/tools/HaveTheyBeenPwned
 
 echo -e ${green} "[+]" ${white} "Extracting Email Addresses for HIBP" ${yellow}
-cat $2/humans.csv  | cut -d , -f 1,3 |cut -d , -f 2|sort -u |grep -v "found@" >> $2/Email_HIBP
+cat $2/humans.csv  | cut -d , -f 1,3 |cut -d , -f 2|sort -u |grep -v "found@" > $2/Emails.txt
 cat << "EOF"
   _    _ _____ ____  _____     _____ _               _    
  | |  | |_   _|  _ \|  __ \   / ____| |             | |   
@@ -44,8 +44,14 @@ cat << "EOF"
  |_|  |_|_____|____/|_|       \_____|_| |_|\___|\___|_|\_\
 EOF
 echo -e ${blue} "[-]" ${white} "A Complete list of email addresses that were found is here" $2
-./HaveTheyBeenPwned.py -i $2/Email_HIBP -oR $2/OwnedEmailAddress.txt
+./HaveTheyBeenPwned.py -i $2/Emails.txt -oR $2/OwnedEmailAddress.txt
 cd ..
+
+cd /root/tools/dnsrecon
+echo -e ${blue} "[-]" ${white} "A output will be found here /root/tools/dnsrecon" 
+./dnsrecon.py -n 8.8.8.8 --domain $1 -t axfr -x $1
+
+
 cd /root/tools/Domain-Mail-Check
 echo  -e ${green} "[+]" ${white} "Checking for SPF and DMARC" ${yellow}
 cat << "EOF"
