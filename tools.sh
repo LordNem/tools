@@ -46,7 +46,7 @@ echo -e ${green} "[+]" ${white} "Installing" ${red} "sshfs" ${white}
 printf "\033c"
 set_target (){
 echo -e ${green} "[+]" ${yellow} "Enter the where you would like the tools Placed" ${red}
-echo -e ${green} "[+]" ${yellow} "Recommended Place is "${red} "/root/tools/" 
+echo -e ${green} "[+]" ${yellow} "Recommended Place is "${white} "/root/tools/" ${red}
 read -e  tools
 mkdir $tools
 cd $tools
