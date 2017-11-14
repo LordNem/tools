@@ -31,7 +31,7 @@ cd /root/tools/CombineHarvester
 ./combineharvester.sh "$1" "$2"
 cd ..
 
-_cat << "EOF"
+cat << "EOF"
 
 ______ _   _  ___________                     
 |  _  \ \ | |/  ___| ___ \                    
