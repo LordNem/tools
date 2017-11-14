@@ -1,33 +1,75 @@
 #!/bin/bash
-#Install Script
+red='\033[0;31m'
+green='\033[0;32m'
+white='\033[1;37m'
+blue='\033[0;34m'
+yellow='\033[1;33m'
 
-sudo apt-get update
-sudo apt-get -y upgrade 
 
-# Configure ToolSuite
-cd ~/
-cd /opt
-mkdir lib
-cd lib
-
-# Git Repos...
-
-git clone https://github.com/LordNem/adXtract
-git clone https://github.com/ins1gn1a/pwdlyser.git
-git clone https://github.com/ins1gn1a/Domain-Mail-Check.git
-git clone https://github.com/ins1gn1a/NetNTLM-Hashcat.git
-git clone https://github.com/LordNem/CombineHarvester.git
-git clone https://github.com/burtonc/HaveTheyBeenPwned.git
-git clone https://github.com/drwetter/testssl.sh.git
-git clone https://github.com/reverse-shell/routersploit.git
-git clone https://github.com/libcrack/iker.git
-git clone https://github.com/sensepost/mana
-git clone https://github.com/Raikia/FiercePhish
-git clone https://github.com/darkoperator/dnsrecon.git
-git clone https://github.com/nccgroup/vlan-hopping---frogger.git
-git clone https://github.com/darkoperator/dnsrecon.git
-git clone https://github.com/Dionach/CMSmap.git
-git clone https://github.com/evilsocket/bettercap.git
-
+#git hub repos
+Git_Clone(){
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "adXtract" ${white}
+	git clone https://github.com/LordNem/adXtract &> /dev/null
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "Run-DMC" ${white}
+	git clone https://github.com/ins1gn1a/Domain-Mail-Check.git &> /dev/null
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "NetNTLM-Hashcat" ${white}
+	git clone https://github.com/ins1gn1a/NetNTLM-Hashcat.git &> /dev/null
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "CombineHarvester" ${white}
+	git clone https://github.com/LordNem/CombineHarvester.git &> /dev/null
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "HaveTheyBeenPwned" ${white}
+	git clone https://github.com/burtonc/HaveTheyBeenPwned.git &> /dev/null
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "testssl" ${white}
+	git clone https://github.com/drwetter/testssl.sh.git &> /dev/null
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "routersploit" ${white}
+	git clone https://github.com/reverse-shell/routersploit.git &> /dev/null
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "iker" ${white}
+	git clone https://github.com/libcrack/iker.git &> /dev/null
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "Mana" ${white}
+	git clone https://github.com/sensepost/mana &> /dev/null
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "FiercePhish" ${white}
+	git clone https://github.com/Raikia/FiercePhish &> /dev/null
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "dnsrecon" ${white}
+	git clone https://github.com/darkoperator/dnsrecon.git &> /dev/null
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "Frogger" ${white}
+	git clone https://github.com/nccgroup/vlan-hopping---frogger.git &> /dev/null
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "CMSMap" ${white}
+	git clone https://github.com/Dionach/CMSmap.git &> /dev/null
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "bettercap" ${white}
+	git clone https://github.com/evilsocket/bettercap.git &> /dev/null
+echo -e ${green} "[+]" ${white} "Installing" ${red} "sshfs" ${white}
+	apt-get install sshfs -y &> /dev/null
 # Update Packages
 #git clone git://git.kali.org/packages/exploitdb.git
+}
+
+#Set Target Location
+printf "\033c"
+set_target (){
+echo -e ${green} "[+]" ${yellow} "Enter the where you would like the tools Placed" ${white}
+read -e  tools
+mkdir $tools
+cd $tools
+Git_Clone
+}
+
+#Install Script
+printf "\033c"
+echo -e ${blue} 
+cat << "EOF"
+ _____           _     
+|_   _|         | |    
+  | | ___   ___ | |___ 
+  | |/ _ \ / _ \| / __|
+  | | (_) | (_) | \__ \
+  \_/\___/ \___/|_|___/
+EOF
+
+echo -e ${green} "[+]" ${white} "Do you want to Update && Upgrade <Y/n> " 
+read
+if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]]
+then
+ sudo apt-get update && apt-get -y upgrade
+set_target
+else
+set_target
+fi
