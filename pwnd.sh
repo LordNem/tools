@@ -30,7 +30,7 @@ EOF
 cd /root/tools/CombineHarvester
 ./combineharvester.sh "$1" "$2"
 cd ..
-
+echo -e ${green} "[+]" ${white} "Loading DNSRecon" ${yellow}
 cat << "EOF"
 
 ______ _   _  ___________                     
