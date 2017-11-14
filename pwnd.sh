@@ -44,7 +44,7 @@ EOF
 
 cd /root/tools/dnsrecon
 echo -e ${blue} "[-]" ${white} "A output will be found here " $2
-./dnsrecon.py -n 8.8.8.8 --domain $1 -t axfr -x $2/$1
+#./dnsrecon.py -n 8.8.8.8 --domain $1 -t axfr -x $2/$1
 
 
 cd /root/tools/Domain-Mail-Check
