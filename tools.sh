@@ -17,7 +17,7 @@ git clone https://github.com/ins1gn1a/pwdlyser.git
 git clone https://github.com/ins1gn1a/Domain-Mail-Check.git
 git clone https://github.com/ins1gn1a/NetNTLM-Hashcat.git
 git clone https://github.com/LordNem/CombineHarvester.git
-git clone https://github.com/CBurton/HaveTheyBeenPwned.git
+git clone https://github.com/burtonc/HaveTheyBeenPwned.git
 git clone https://github.com/drwetter/testssl.sh.git
 git clone https://github.com/reverse-shell/routersploit.git
 git clone https://github.com/libcrack/iker.git
