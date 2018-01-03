@@ -49,10 +49,6 @@ python Run-DMC -d $1
 
 echo  -e ${blue} "[-]" ${white} "An XML output is also in the Domain-Mail-Check Folder"
 
-cd /root/tools/HaveTheyBeenPwned
-
-echo -e ${green} "[+]" ${white} "Extracting Email Addresses for HIBP" ${yellow}
-cat $2/humans.csv  | cut -d , -f 1,3 |cut -d , -f 2|sort -u |grep -v "found@" > $2/Emails.txt
 cat << "EOF"
 
 cd ..
