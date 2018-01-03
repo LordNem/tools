@@ -49,9 +49,5 @@ echo -e ${white}
 python Run-DMC -d $1
 
 echo  -e ${blue} "[-]" ${white} "An XML output is also in the Domain-Mail-Check Folder"
-
-cat << "EOF"
-
-cd ..
 echo  -e ${green} "[+]" ${white} "Complete"
 
