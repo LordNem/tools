@@ -16,6 +16,7 @@ echo -e ${red} "[X]" ${white} "Usage: Enter Domain and output path"
 
 fi
 
+mkdir $2
 CWD="$(pwd)"
 echo -e ${green} "[+]" ${white} "Loading DNSRecon" ${yellow}
 cat << "EOF"
@@ -53,3 +54,4 @@ cat << "EOF"
 
 cd ..
 echo  -e ${green} "[+]" ${white} "Complete"
+
