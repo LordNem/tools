@@ -46,7 +46,7 @@ cat << "EOF"
  |_|  \_\__,_|_| |_|     |_____/|_|  |_|\_____|
 EOF
 echo -e ${white} 
-python Run-DMC -d $1
+python3 Run-DMC -d $1
 
 echo  -e ${blue} "[-]" ${white} "An XML output is also in the Domain-Mail-Check Folder"
 echo  -e ${green} "[+]" ${white} "Complete"
