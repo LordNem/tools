@@ -16,6 +16,8 @@ echo -e ${green} "[+]" ${white} "Downloading" ${red} "NetNTLM-Hashcat" ${white}
 	git clone https://github.com/ins1gn1a/NetNTLM-Hashcat.git &> /dev/null
 echo -e ${green} "[+]" ${white} "Downloading" ${red} "CombineHarvester" ${white}
 	git clone https://github.com/LordNem/CombineHarvester.git &> /dev/null
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "wifiPwn" ${white}
+	git clone https://github.com/LordNem/wifiPwn.git &> /dev/null
 echo -e ${green} "[+]" ${white} "Downloading" ${red} "HaveTheyBeenPwned" ${white}
 	git clone https://github.com/burtonc/HaveTheyBeenPwned.git &> /dev/null
 echo -e ${green} "[+]" ${white} "Downloading" ${red} "testssl" ${white}
