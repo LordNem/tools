@@ -43,7 +43,7 @@ echo -e ${green} "[+]" ${white} "Installing" ${red} "sshfs" ${white}
 echo -e ${green} "[+]" ${white} "Installing" ${red} "Empire" ${white}
 	git clone https://github.com/EmpireProject/Empire.git &> /dev/null
 echo -e ${green} "[+]" ${white} "Installing" ${red} "DeathStar" ${white}
-	git clone https://github.com/BloodHoundAD/BloodHound.git &> /dev/null
+	git clone https://github.com/byt3bl33d3r/DeathStar.git &> /dev/null
 echo -e ${green} "[+]" ${white} "Installing" ${red} "Responder" ${white}
 	git clone https://github.com/lgandx/Responder.git &> /dev/null
 echo -e ${green} "[+]" ${white} "Installing" ${red} "Impacket" ${white}
