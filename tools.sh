@@ -40,6 +40,16 @@ echo -e ${green} "[+]" ${white} "Downloading" ${red} "bettercap" ${white}
 	git clone https://github.com/evilsocket/bettercap.git &> /dev/null
 echo -e ${green} "[+]" ${white} "Installing" ${red} "sshfs" ${white}
 	apt-get install sshfs -y &> /dev/null
+echo -e ${green} "[+]" ${white} "Installing" ${red} "Empire" ${white}
+	git clone https://github.com/EmpireProject/Empire.git &> /dev/null
+echo -e ${green} "[+]" ${white} "Installing" ${red} "DeathStar" ${white}
+	git clone https://github.com/BloodHoundAD/BloodHound.git &> /dev/null
+echo -e ${green} "[+]" ${white} "Installing" ${red} "Responder" ${white}
+	git clone https://github.com/lgandx/Responder.git &> /dev/null
+echo -e ${green} "[+]" ${white} "Installing" ${red} "Impacket" ${white}
+	git clone https://github.com/CoreSecurity/impacket.git &> /dev/null	
+	
+	
 # Update Packages
 #git clone git://git.kali.org/packages/exploitdb.git
 }
