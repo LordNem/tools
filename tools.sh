@@ -87,7 +87,7 @@ read prompt
 if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]]
 then
 echo -e ${green} "[+]" ${white} "Performing updates Silently Please wait..."
- sudo apt-get update &> /dev/null && apt-get -y upgrade &> /dev/null
+ sudo apt-get update &> /dev/null && apt-get -y upgrade
 set_target
 else
 set_target
