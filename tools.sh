@@ -41,7 +41,9 @@ echo -e ${green} "[+]" ${white} "Downloading" ${red} "bettercap" ${white}
 echo -e ${green} "[+]" ${white} "Downloading" ${red} "Bloodhound" ${white}
 	git clone https://github.com/BloodHoundAD/BloodHound.git &> /dev/null	
 echo -e ${green} "[+]" ${white} "Downloading" ${red} "Empire" ${white}
-	git clone git clone https://github.com/byt3bl33d3r/Empire &> /dev/null
+	git clone https://github.com/byt3bl33d3r/Empire &> /dev/null
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "DeathStar" ${white}	
+	git clone https://github.com/byt3bl33d3r/DeathStar.git
 echo -e ${green} "[+]" ${white} "Installing" ${red} "sshfs" ${white}
 	apt-get install sshfs -y &> /dev/null
 echo -e ${green} "[+]" ${white} "Installing" ${red} "Empire" ${white}
