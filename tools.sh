@@ -38,6 +38,8 @@ echo -e ${green} "[+]" ${white} "Downloading" ${red} "CMSMap" ${white}
 	git clone https://github.com/Dionach/CMSmap.git &> /dev/null
 echo -e ${green} "[+]" ${white} "Downloading" ${red} "bettercap" ${white}
 	git clone https://github.com/evilsocket/bettercap.git &> /dev/null
+echo -e ${green} "[+]" ${white} "Downloading" ${red} "SecLists" ${white}
+	git clone https://github.com/danielmiessler/SecLists.git &> /dev/null
 echo -e ${green} "[+]" ${white} "Downloading" ${red} "Bloodhound" ${white}
 	git clone https://github.com/BloodHoundAD/BloodHound.git &> /dev/null	
 echo -e ${green} "[+]" ${white} "Downloading" ${red} "Empire" ${white}
