@@ -56,7 +56,7 @@ echo -e ${green} "[+]" ${white} "Installing" ${red} "DeathStar" ${white}
 echo -e ${green} "[+]" ${white} "Installing" ${red} "Responder" ${white}
 	git clone https://github.com/lgandx/Responder.git &> /dev/null
 echo -e ${green} "[+]" ${white} "Installing" ${red} "Impacket" ${white}
-	git clone https://github.com/CoreSecurity/impacket.git &> /dev/null	
+	git clone https://github.com/SecureAuthCorp/impacket.git &> /dev/null	
 	
 	
 # Update Packages
