@@ -1,9 +1,3 @@
-cls
-
-Write-Host @"
-Kracken                                         
-"@ -fo green
-
 $cwd = (Resolve-Path .\).Path
 Write-Host $cwd -fo red
 
@@ -34,11 +28,11 @@ $Hashpath = Read-Host "Enter path to the Hashes you want to Crack"
 Write-host "#########################"
 Write-host "# Cracking Using Hashcat#" -fo Yellow
 Write-host "#########################"-fo green
-
-cmd /c $HCPath -m 1000 $Hashpath $words"*.txt" -w3 --rules $rules"\First.rule"
-cmd /c $HCPath -m 1000 $Hashpath --show > $cwd\OutPutHashes1.txt"
-cmd /c $HCPath -m 1000 $Hashpath $words"*.txt" -w3 --rules $rules"\Second.rule"
-cmd /c $HCPath -m 1000 $Hashpath --show > $cwd"\OutPutHashes2.txt"
-cmd /c $HCPath -m 1000 $Hashpath $words"*.txt" -w3 --rules "$rules\Big.rule"
-cmd /c $HCPath -m 1000 $Hashpath --show > $cwd"\OutPutHashes3.txt"
+cd $HCPath
+.\hashcat64.exe -m 1000 $Hashpath $words"*.txt" -w3 -O --rules $rules"First.rule" --potfile-disable
+.\hashcat64.exe -m 1000 $Hashpath --show > $cwd"OutPutHashes1.txt"
+.\hashcat64.exe -m 1000 $Hashpath $words"*.txt" -w3 --rules $rules"Second.rule"
+.\hashcat64.exe -m 1000 $Hashpath --show > $cwd"OutPutHashes2.txt"
+.\hashcat64.exe -m 1000 $Hashpath $words"*.txt" -w3 --rules $rules"Big.rule"
+.\hashcat64.exe -m 1000 $Hashpath --show > $cwd"OutPutHashes3.txt"
 pause 
