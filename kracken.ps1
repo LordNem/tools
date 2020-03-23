@@ -29,7 +29,7 @@ Write-host "#########################"
 Write-host "# Cracking Using Hashcat#" -fo Yellow
 Write-host "#########################"-fo green
 cd $HCPath
-.\hashcat64.exe -m 1000 $Hashpath $words"*.txt" -w3 -O --rules $rules"First.rule" --potfile-disable
+.\hashcat64.exe -m 1000 $Hashpath $words"*.txt" -w3 -O --rules $rules"First.rule"
 .\hashcat64.exe -m 1000 $Hashpath --show > $cwd"OutPutHashes1.txt"
 .\hashcat64.exe -m 1000 $Hashpath $words"*.txt" -w3 --rules $rules"Second.rule"
 .\hashcat64.exe -m 1000 $Hashpath --show > $cwd"OutPutHashes2.txt"
