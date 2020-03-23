@@ -29,10 +29,9 @@ Write-host "#########################"
 Write-host "# Cracking Using Hashcat#" -fo Yellow
 Write-host "#########################"-fo green
 cd $HCPath
-.\hashcat64.exe -m 1000 $Hashpath $words"*.txt" -w3 -O --rules $rules"First.rule"
-.\hashcat64.exe -m 1000 $Hashpath --show > $cwd"\OutPutHashes1.txt"
-#.\hashcat64.exe -m 1000 $Hashpath $words"*.txt" -w3 --rules $rules"Second.rule"
-#.\hashcat64.exe -m 1000 $Hashpath --show > $cwd"\OutPutHashes2.txt"
-#.\hashcat64.exe -m 1000 $Hashpath $words"*.txt" -w3 --rules $rules"Big.rule"
-#.\hashcat64.exe -m 1000 $Hashpath --show > $cwd"\OutPutHashes3.txt"
+.\hashcat64.exe -m 1000 $Hashpath $words"*.txt" -w3 -O --rules $rules"First.rule" -o $cwd"\OutPutHashes1.txt" --outfile-format=3
+#.\hashcat64.exe -m 1000 $Hashpath --show --username > $cwd"\OutPutHashes1.txt"
+#.\hashcat64.exe -m 1000 $Hashpath $words"*.txt" -w3 --rules $rules"Second.rule" -o $cwd"\OutPutHashes2.txt" --outfile-format=3
+#.\hashcat64.exe -m 1000 $Hashpath --show --username > $cwd"\OutPutHashes2.txt"
+
 pause 
